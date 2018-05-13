@@ -9,6 +9,7 @@
   	<module>VetSpaEJB</module>
     <module>VetSpaWS</module>
     <module>VetSpaEAR</module>
+    <module>VetSpaRS</module>
   </modules>
   
   <dependencyManagement>
