@@ -8,7 +8,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 public class ApplicationConfig extends ResourceConfig {
 	
 	public ApplicationConfig() {
-		packages(this.getClass().getPackage().getName());
+            packages(this.getClass().getPackage().getName());
 	}
 	
 }

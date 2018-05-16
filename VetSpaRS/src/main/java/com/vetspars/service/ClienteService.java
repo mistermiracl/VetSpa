@@ -1,5 +1,6 @@
 package com.vetspars.service;
 
+import com.vetspars.model.ClienteModel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +18,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 @Path("ClienteService")
-public class ClienteService implements EntityService {
+public class ClienteService implements EntityService<ClienteModel> {
 
 	public ClienteService() {
 	}
@@ -26,44 +27,39 @@ public class ClienteService implements EntityService {
 	@Path("new")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response insert(Object toInsert) {
+	public int insert(ClienteModel toInsert) {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 	@DELETE
 	@Path("update")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response update(Object toUpdate) {
+	public boolean update(ClienteModel toUpdate) {
 		// TODO Auto-generated method stub
-		return null;
+		return true;
 	}
 
 	@DELETE
 	@Path("delete/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response delete(@PathParam(value = "id") Object id) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean delete(@PathParam(value = "id") Object id) {
+		return true;
 	}
 
 	@GET
 	@Path("find/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response find(@PathParam(value = "id") Object id) {
-		// TODO Auto-generated method stub
+	public ClienteModel find(@PathParam(value = "id") Object id) {
 		return null;
 	}
 	
 	@GET
 	@Path("findAll")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response findAll() {
-		return Response
-				.status(Status.OK)
-				.entity(Arrays.asList("1", "2", "3"))
-				.build();
+	public List<ClienteModel> findAll() {
+		return new ArrayList<ClienteModel>();
 	}
 
 }

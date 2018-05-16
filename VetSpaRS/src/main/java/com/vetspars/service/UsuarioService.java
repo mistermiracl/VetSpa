@@ -1,8 +1,10 @@
 package com.vetspars.service;
 
+import com.vetspars.model.UsuarioModel;
 import javax.ws.rs.Produces;
 
 import java.util.Arrays;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -11,11 +13,9 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
 
 @Path("UsuarioService")
-public class UsuarioService implements EntityService {
+public class UsuarioService implements EntityService<UsuarioModel> {
 	
 	public UsuarioService() {
 	}
@@ -24,43 +24,36 @@ public class UsuarioService implements EntityService {
 	@Path("new")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response insert(Object toInsert) {
-		// TODO Auto-generated method stub
-		return null;
+	public int insert(UsuarioModel toInsert) {
+		return 0;
 	}
 
 	@DELETE
 	@Path("update")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response update(Object toUpdate) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean update(UsuarioModel toUpdate) {
+		return true;
 	}
 
 	@DELETE
 	@Path("delete/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response delete(@PathParam(value = "id") Object id) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean delete(@PathParam(value = "id") Object id) {
+		return true;
 	}
 
 	@GET
 	@Path("find/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response find(@PathParam(value = "id") Object id) {
-		// TODO Auto-generated method stub
+	public UsuarioModel find(@PathParam(value = "id") Object id) {
 		return null;
 	}
 	
 	@GET
 	@Path("findAll")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response findAll() {
-		return Response
-				.status(Status.OK)
-				.entity(Arrays.asList("1", "2", "3"))
-				.build();
+	public List<UsuarioModel> findAll() {
+		return Arrays.asList(new UsuarioModel(), new UsuarioModel(), new UsuarioModel());
 	}
 }
