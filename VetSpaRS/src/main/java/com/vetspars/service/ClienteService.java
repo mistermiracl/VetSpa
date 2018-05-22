@@ -18,15 +18,28 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 @Path("ClienteService")
-public class ClienteService implements EntityService<ClienteModel> {
+public class ClienteService {//implements EntityService<ClienteModel> 
 
 	public ClienteService() {
 	}
 
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String helloWorld() {
+		return "Hello World";
+	}
+	
+	@GET
+	@Path("{name}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String helloWorld(@PathParam("name") String name) {
+		return "Hello " + (name != null ? name : "World");
+	}
+	
 	@POST
 	@Path("new")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_XML)
 	public int insert(ClienteModel toInsert) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -34,8 +47,8 @@ public class ClienteService implements EntityService<ClienteModel> {
 
 	@DELETE
 	@Path("update")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_XML)
 	public boolean update(ClienteModel toUpdate) {
 		// TODO Auto-generated method stub
 		return true;
@@ -43,21 +56,21 @@ public class ClienteService implements EntityService<ClienteModel> {
 
 	@DELETE
 	@Path("delete/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public boolean delete(@PathParam(value = "id") Object id) {
+	@Produces(MediaType.APPLICATION_XML)
+	public boolean delete(@PathParam(value = "id") int id) {
 		return true;
 	}
 
 	@GET
 	@Path("find/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public ClienteModel find(@PathParam(value = "id") Object id) {
+	@Produces(MediaType.APPLICATION_XML)
+	public ClienteModel find(@PathParam(value = "id") int id) {
 		return null;
 	}
 	
 	@GET
 	@Path("findAll")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_XML)
 	public List<ClienteModel> findAll() {
 		return new ArrayList<ClienteModel>();
 	}
