@@ -5,10 +5,6 @@
  */
 package com.vetspars.model;
 
-/**
- *
- * @author Alumno-CT
- */
 public class UsuarioModel {
     
 }
