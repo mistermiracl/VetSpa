@@ -10,7 +10,8 @@
 
 	<artifactId>VetSpaRS</artifactId>
 	<packaging>war</packaging>
-	<name>VetSpaRS</name>
+	<!-- COMMENTED THE NAMES TO BE ABEL TO DEPLOY FORM ECLIPSE. DONT THINK THIS IS THE ISSUE THOU BUT ITS WORKING -->
+	<!--<name>VetSpaRS</name>-->
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -48,7 +49,16 @@
 			<version>${jax-rs-version}</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.vetspa</groupId>
+			<artifactId>VetSpaEJB</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
 
+		<!--
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
@@ -69,7 +79,7 @@
 			<version>${jersey-version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		-->
 	</dependencies>
 
 	<build>

@@ -11,7 +11,7 @@
     <!--<groupId>com.vetspa</groupId> <version>0.0.1-SNAPSHOT</version> -->
     <artifactId>VetSpaWS</artifactId>
     <packaging>war</packaging>
-    <name>VetSpaWS</name>
+    <!--<name>VetSpaWS</name>-->
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -51,12 +51,20 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.sun.xml.ws/jaxws-rt -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>jaxws-rt</artifactId>
             <version>${metro-version}</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
+
+		<dependency>
+			<groupId>com.vetspa</groupId>
+			<artifactId>VetSpaEJB</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
 
     </dependencies>
 

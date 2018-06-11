@@ -62,8 +62,24 @@
                 <artifactId>maven-ear-plugin</artifactId>
                 <version>3.0.1</version>
                 <configuration>
-                    <version>7</version><!-- !Java EE version-->
+                    <version>7</version><!-- Java EE version, in order to use version 7 it has to end with .0 in the facet.xml config in .settings folder (eclipse only)-->
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <modules>
+                    	<ejbModule>
+                    		<groupId>com.vetspa</groupId>
+                    		<artifactId>VetSpaEJB</artifactId>
+                    	</ejbModule>
+                    	<webModule>
+                    		<groupId>com.vetspa</groupId>
+                    		<artifactId>VetSpaWS</artifactId>
+                    		<contextRoot>/VetSpaWS</contextRoot>
+                    	</webModule>
+                    	<webModule>
+                    		<groupId>com.vetspa</groupId>
+                    		<artifactId>VetSpaRS</artifactId>
+                    		<contextRoot>/VetSpaRS</contextRoot>
+                    	</webModule>
+                    </modules>
                 </configuration>
             </plugin>
         </plugins>

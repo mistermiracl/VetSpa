@@ -12,7 +12,7 @@
     <version>0.0.1-SNAPSHOT</version>-->
     <artifactId>VetSpaEJB</artifactId>
     <packaging>ejb</packaging>
-    <name>VetSpaEJB</name>
+    <!-- <name>VetSpaEJB</name>-->
     
     <url>http://maven.apache.org</url>
     
