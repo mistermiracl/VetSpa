@@ -24,8 +24,10 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="container padded-30 main-title">
-			<h1>VetSpa - RESTful Service</h1>
+		<div class="padded-30 main-title col-sm-12">
+			<div class="container">
+				<h1>VetSpa - RESTful Service</h1>
+			</div>
 		</div>
 		<div>
 			<ul>

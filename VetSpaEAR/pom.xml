@@ -64,7 +64,7 @@
                 <configuration>
                     <version>7</version><!-- Java EE version, in order to use version 7 it has to end with .0 in the facet.xml config in .settings folder (eclipse only)-->
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
-                    <modules>
+                    <!--<modules>
                     	<ejbModule>
                     		<groupId>com.vetspa</groupId>
                     		<artifactId>VetSpaEJB</artifactId>
@@ -79,7 +79,7 @@
                     		<artifactId>VetSpaRS</artifactId>
                     		<contextRoot>/VetSpaRS</contextRoot>
                     	</webModule>
-                    </modules>
+                    </modules>-->
                 </configuration>
             </plugin>
         </plugins>
