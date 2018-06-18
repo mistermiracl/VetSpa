@@ -64,22 +64,28 @@
                 <configuration>
                     <version>7</version><!-- Java EE version, in order to use version 7 it has to end with .0 in the facet.xml config in .settings folder (eclipse only)-->
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
-                    <!--<modules>
+                    <modules>
                     	<ejbModule>
                     		<groupId>com.vetspa</groupId>
                     		<artifactId>VetSpaEJB</artifactId>
+                    		<!-- HAD TO MODIFY THE BUNDLE FILE NAME PROPERTY IN THE EAR PLUGIN BECAUSE THE DEPLOYED EAR APPLICATION.XML 
+                    		ECLIPSE USED FOR WILDFLY WAS NOT ACTUALLY THE ONE IN THE TARGET DIR OF THE PROJECT BECAUSE IT DIDNT HAD THE NAMES OF THE ARTIFACTS, BUT THE PROJECTS NAMES
+                    		 something like VetSpaEJB-0.0.1-SNAPSHOT.jar vs com.vetspa-VetSpaEJB-0.0.1-SNAPSHOT.jar, this fixed the could not locate error-->
+                    		<bundleFileName>VetSpaEJB-0.0.1-SNAPSHOT.jar</bundleFileName>
                     	</ejbModule>
                     	<webModule>
                     		<groupId>com.vetspa</groupId>
                     		<artifactId>VetSpaWS</artifactId>
+                    		<bundleFileName>VetSpaWS-0.0.1-SNAPSHOT.war</bundleFileName>
                     		<contextRoot>/VetSpaWS</contextRoot>
                     	</webModule>
                     	<webModule>
                     		<groupId>com.vetspa</groupId>
                     		<artifactId>VetSpaRS</artifactId>
+                    		<bundleFileName>VetSpaRS-0.0.1-SNAPSHOT.war</bundleFileName>
                     		<contextRoot>/VetSpaRS</contextRoot>
                     	</webModule>
-                    </modules>-->
+                    </modules>
                 </configuration>
             </plugin>
         </plugins>
