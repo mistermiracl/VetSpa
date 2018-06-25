@@ -12,6 +12,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -33,6 +34,28 @@ public class DistritoService implements EntityService<DistritoModel>{
 	public DistritoService() {
 	}
 
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	public String index() {
+		return "{\"mensaje\": \"El servicio esta funcionando\"}";
+	}
+	
+	@GET
+	@Path("{name}")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String helloWorld(@PathParam("name") String name) {
+		switch(name) {
+		case "insert":
+			return String.format("<h2 style=\"font-family: arial\">La operacion %s no acepta GET</h2>", name);
+		case "update":
+			return String.format("<h2 style=\"font-family: arial\">La operacion %s no acepta GET</h2>", name);
+		case "delete":
+			return String.format("<h2 style=\"font-family: arial\">La operacion %s no acepta GET</h2>", name);
+		default:
+			return "Hello " + (name != null ? name : "World");
+		}
+	}
+	
 	@POST
 	@Path("new")
 	@Consumes(MediaType.APPLICATION_JSON)

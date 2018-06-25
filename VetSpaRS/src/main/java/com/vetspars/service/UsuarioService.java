@@ -37,16 +37,25 @@ public class UsuarioService implements EntityService<UsuarioModel> {
 	}
 	
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String helloWorld() {
-		return "Hello World";
+	@Produces(MediaType.APPLICATION_JSON)
+	public String index() {
+		return "{\"mensaje\": \"El servicio esta funcionando\"}";
 	}
 	
 	@GET
 	@Path("{name}")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String helloWorld(@PathParam("name") String name) {
-		return "Hello " + (name != null ? name : "World");
+		switch(name) {
+		case "insert":
+			return String.format("<h2 style=\"font-family: arial\">La operacion %s no acepta GET</h2>", name);
+		case "update":
+			return String.format("<h2 style=\"font-family: arial\">La operacion %s no acepta GET</h2>", name);
+		case "delete":
+			return String.format("<h2 style=\"font-family: arial\">La operacion %s no acepta GET</h2>", name);
+		default:
+			return "Hello " + (name != null ? name : "World");
+		}
 	}
 	
 	@POST
