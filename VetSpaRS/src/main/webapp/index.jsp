@@ -54,7 +54,7 @@ ul {
 						<br>
 						Metodos:
 						<br>
-						<a href="api/UsuarioService/insert">Insertar</a><br>
+						<a href="api/UsuarioService/new">Insertar</a><br>
 						<a href="api/UsuarioService/update">Actualizar</a><br>
 						<a href="api/UsuarioService/delete">Eliminar</a><br>
 						<a href="api/UsuarioService/find">Buscar</a><br>
@@ -68,7 +68,7 @@ ul {
 						<br>
 						Metodos:
 						<br>
-						<a href="api/ClienteService/insert">Insertar</a><br>
+						<a href="api/ClienteService/new">Insertar</a><br>
 						<a href="api/ClienteService/update">Actualizar</a><br>
 						<a href="api/ClienteService/delete">Eliminar</a><br>
 						<a href="api/ClienteService/find">Buscar</a><br>
@@ -82,7 +82,7 @@ ul {
 						<br>
 						Metodos:
 						<br>
-						<a href="api/DistritoService/insert">Insertar</a><br>
+						<a href="api/DistritoService/new">Insertar</a><br>
 						<a href="api/DistritoService/update">Actualizar</a><br>
 						<a href="api/DistritoService/delete">Eliminar</a><br>
 						<a href="api/DistritoService/find">Buscar</a><br>

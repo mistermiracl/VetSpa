@@ -47,7 +47,7 @@ public class UsuarioService implements EntityService<UsuarioModel> {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String helloWorld(@PathParam("name") String name) {
 		switch(name) {
-		case "insert":
+		case "new":
 			return String.format("<h2 style=\"font-family: arial\">La operacion %s no acepta GET</h2>", name);
 		case "update":
 			return String.format("<h2 style=\"font-family: arial\">La operacion %s no acepta GET</h2>", name);
