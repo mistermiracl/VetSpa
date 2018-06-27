@@ -145,7 +145,7 @@ public class ClienteService implements EntityService<ClienteModel> {
 							cli.getSexo(), 
 							cli.getCelular(), 
 							cli.getDireccion(), 
-							new DistritoModel(cli.getDistrito().getCodigo(), cli.getDistrito().getNombre())));
+							cli.getDistrito() != null ? new DistritoModel(cli.getDistrito().getCodigo(), cli.getDistrito().getNombre()) : null));
 		} else {
 			return new VetSpaResponse<>(ResponseCode.ERROR, ResponseMessage.OPERATION_ERROR, null);
 		}
@@ -171,11 +171,35 @@ public class ClienteService implements EntityService<ClienteModel> {
 								c.getSexo(), 
 								c.getCelular(), 
 								c.getDireccion(), 
-								new DistritoModel(c.getDistrito().getCodigo(), c.getDistrito().getNombre()));
+								c.getDistrito() != null ? new DistritoModel(c.getDistrito().getCodigo(), c.getDistrito().getNombre()) : null);
 					}).collect(Collectors.toList()));
 		} else {			
 			return new VetSpaResponse<List<ClienteModel>>(ResponseCode.ERROR, ResponseMessage.OPERATION_ERROR, null);
 		}
 	}
-
+	
+	@GET
+	@Path("findByDNI/{dni}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public VetSpaResponse<ClienteModel> findByDNI(@PathParam("dni") String dni){
+		Cliente cliente = clienteFacade.findByDNI(dni);
+		if(cliente != null) {
+			return new VetSpaResponse<>(ResponseCode.SUCCESS, ResponseMessage.OPERATION_SUCCESSFUL, 
+					new ClienteModel(
+							cliente.getId(),
+							cliente.getDni(),
+							cliente.getNombre(),
+							cliente.getNombreSeg(),
+							cliente.getApellidoPat(),
+							cliente.getApellidoMat(),
+							cliente.getFechaNac(),
+							cliente.getSexo(),
+							cliente.getCelular(),
+							cliente.getDireccion(),
+							cliente.getDistrito() != null ? new DistritoModel(cliente.getDistrito().getCodigo(), cliente.getDistrito().getNombre()) : null
+					));
+		} else {
+			return new VetSpaResponse<>(ResponseCode.ERROR, ResponseMessage.OPERATION_ERROR, null);
+		}
+	}
 }

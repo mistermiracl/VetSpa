@@ -58,7 +58,7 @@ ul {
 						<a href="api/UsuarioService/update">Actualizar</a><br>
 						<a href="api/UsuarioService/delete">Eliminar</a><br>
 						<a href="api/UsuarioService/find">Buscar</a><br>
-						<a href="api/UsuarioService/findAll">Listar</a><br>
+						<a href="api/UsuarioService/findAll">Listar</a>
 					</p>
 				</li>
 				<li>
@@ -72,7 +72,8 @@ ul {
 						<a href="api/ClienteService/update">Actualizar</a><br>
 						<a href="api/ClienteService/delete">Eliminar</a><br>
 						<a href="api/ClienteService/find">Buscar</a><br>
-						<a href="api/ClienteService/findAll">Listar</a><br>	
+						<a href="api/ClienteService/findAll">Listar</a><br>
+						<a href="api/ClienteService/findByDNI/DNI_VA_AQUI">Buscar por DNI</a>	
 					</p>
 				</li>
 				<li>

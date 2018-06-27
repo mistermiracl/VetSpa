@@ -49,4 +49,9 @@ public class ClienteService implements EntityService<Cliente>{
 		return clienteFacade.findAll();
 	}
 	
+	@WebMethod
+	public Cliente findByDNI(String dni) {
+		return clienteFacade.findByDNI(dni);
+	}
+	
 }

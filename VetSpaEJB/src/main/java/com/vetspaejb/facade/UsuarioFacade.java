@@ -1,5 +1,7 @@
 package com.vetspaejb.facade;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -29,8 +31,8 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Usuario> cq = cb.createQuery(Usuario.class);
 		Root<Usuario> user = cq.from(Usuario.class);
-		return em.createQuery(cq.where(cb.and(cb.equal(user.get("USERNAME"), username), cb.equal(user.get("PASS"), password))))
-				.getResultList().get(0);
+		List<Usuario> users = em.createQuery(cq.where(cb.and(cb.equal(user.get("USERNAME"), username), cb.equal(user.get("PASS"), password)))).getResultList();
+		return users.size() > 0 ? users.get(0) : null;
 	}
 
 }
